@@ -23,9 +23,8 @@ $(function(){
 //http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz18lrjlna2a3_5qhl2&address=2114+Bigelow+Ave&citystatezip=Seattle%2C+WA 	
 
 
-
  	$.ajax({
- 		url:url,
+ 		url: url,
  		/*data:{
  			"address":address,
  			//"citystatezip":city+state
@@ -35,8 +34,10 @@ $(function(){
  		dataType:'xml',
  		type: 'GET',
 
- 		success:function(data){
- 			console.log(data);
+ 		success:function(xmlData){
+ 			console.log(xmlData);
+ 			let jsonData = xmlToJson(xmlData);
+ 			console.log(jsonData);
 
  		}
 
@@ -44,3 +45,4 @@ $(function(){
  	});
  });
 });
+//https://github.com/gregmagdsick/checkMyRent
